@@ -1,4 +1,4 @@
-function [root,ea,iter] = FalsePosition(func, xl,xu,es,maxit,varargin)
+function [root,ea,iter] =ApproximateRelatvieError_Bisection_FalsePosition(func, xl,xu,es,maxit,varargin)
 %flasepos : root location zerores
 % [root,ea,iter] = falsepos(func,xl,xu,es,maxit,p1,pw,...)
 %   uses false postion to find the root of func
@@ -77,7 +77,7 @@ H = semilogy(B,A, 'b+-', C, D, 'r+-');
 set(H,'LineWidth', 1.25);
 
 title('Figure 2. Approximate Relatvie Error');
-xlabel('Number of Iterations'); ylabel('True Relative Error'); grid on;
+xlabel('Number of Iterations'); ylabel('Approximate Relative Error'); grid on;
 legend('show');
 h = legend('Flase position', 'Bisection');
 
