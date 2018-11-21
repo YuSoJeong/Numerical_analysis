@@ -1,4 +1,4 @@
-function [root,ea,iter] =  True Relatvie Error_Bisection_FalsePosition(func, xl,xu,es,maxit,varargin)
+function [root,ea,iter] =TrueRelatvieError_Bisection_FalsePosition(func, xl,xu,es,maxit,varargin)
 %flasepos : root location zerores
 % [root,ea,iter] = falsepos(func,xl,xu,es,maxit,p1,pw,...)
 %   uses false postion to find the root of func
