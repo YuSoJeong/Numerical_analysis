@@ -1,4 +1,4 @@
-function [root,ea,iter] = atrue(func, xl,xu,es,maxit,varargin)
+function [root,ea,iter] = Bisection(func, xl,xu,es,maxit,varargin)
 %flasepos : root location zerores
 % [root,ea,iter] = falsepos(func,xl,xu,es,maxit,p1,pw,...)
 %   uses false postion to find the root of func
@@ -8,13 +8,13 @@ function [root,ea,iter] = atrue(func, xl,xu,es,maxit,varargin)
 
 
 
-%inputÀÌ 3º¸´Ù ÀÛÀ» °æ¿ì
+%inputì´ 3ë³´ë‹¤ ì‘ì„ ê²½ìš°
 if nargin<3, error('at least 3 input arguments required'), end
 test = func(xl,varargin{:})*func(xu,varargin{:});
 if test>0, error('no sign chang'), end
-%inputÀÌ 4º¸´Ù ÀÛÀ» °æ¿ì¿¡´Â es = 0.0001·Î ÃÊ±âÈ­ ÇØÁØ´Ù.
+%inputì´ 4ë³´ë‹¤ ì‘ì„ ê²½ìš°ì—ëŠ” es = 0.0001ë¡œ ì´ˆê¸°í™” í•´ì¤€ë‹¤.
 if nargin<4||isempty(es), es=0.0001; end
-%inputÀÌ 5º¸´Ù ÀÛÀ» °æ¿ì¿¡´Â maxitÀ» 50À¸·Î ÃÊ±âÈ­ ÇØÁØ´Ù.
+%inputì´ 5ë³´ë‹¤ ì‘ì„ ê²½ìš°ì—ëŠ” maxitì„ 50ìœ¼ë¡œ ì´ˆê¸°í™” í•´ì¤€ë‹¤.
 if nargin<5||isempty(maxit), maxit=50; end
 
 iter = 0; xr = xl; ea = 100;A = zeros(1,100); B= zeros(1,100); xr2 = xl; xu2 = xu;
