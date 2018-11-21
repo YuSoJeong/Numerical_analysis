@@ -1,4 +1,4 @@
-function [root,ea,iter] = approximate(func, xl,xu,es,maxit,varargin)
+function [root,ea,iter] = FalsePosition(func, xl,xu,es,maxit,varargin)
 %flasepos : root location zerores
 % [root,ea,iter] = falsepos(func,xl,xu,es,maxit,p1,pw,...)
 %   uses false postion to find the root of func
@@ -8,13 +8,13 @@ function [root,ea,iter] = approximate(func, xl,xu,es,maxit,varargin)
 
 
 
-%inputÀÌ 3º¸´Ù ÀÛÀ» °æ¿ì
+%inputì´ 3ë³´ë‹¤ ì‘ì„ ê²½ìš°
 if nargin<3, error('at least 3 input arguments required'), end
 test = func(xl,varargin{:})*func(xu,varargin{:});
 if test>0, error('no sign chang'), end
-%inputÀÌ 4º¸´Ù ÀÛÀ» °æ¿ì¿¡´Â es = 0.0001·Î ÃÊ±âÈ­ ÇØÁØ´Ù.
+%inputì´ 4ë³´ë‹¤ ì‘ì„ ê²½ìš°ì—ëŠ” es = 0.0001ë¡œ ì´ˆê¸°í™” í•´ì¤€ë‹¤.
 if nargin<4||isempty(es), es=0.0001; end
-%inputÀÌ 5º¸´Ù ÀÛÀ» °æ¿ì¿¡´Â maxitÀ» 50À¸·Î ÃÊ±âÈ­ ÇØÁØ´Ù.
+%inputì´ 5ë³´ë‹¤ ì‘ì„ ê²½ìš°ì—ëŠ” maxitì„ 50ìœ¼ë¡œ ì´ˆê¸°í™” í•´ì¤€ë‹¤.
 if nargin<5||isempty(maxit), maxit=50; end
 
 iter = 0; xr = xl; ea = 100;A = zeros(1,100); B= zeros(1,100);  er = 100;
@@ -40,7 +40,7 @@ while(1)
     if ea<=es || iter >=100, break, end
 end
 
-%°°ÀÌ »ç¿ëÇÏ´Â º¯¼ö ÃÊ±âÈ­, º¯¼ö ÃÊ±âÈ­¸¦ ÇØÁÖÁö ¾ÊÀ¸¸é °á°ú°ªÀÌ Á¦´ë·Î ³ª¿ÀÁö ¾Ê´Â´Ù.
+%ê°™ì´ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜ ì´ˆê¸°í™”, ë³€ìˆ˜ ì´ˆê¸°í™”ë¥¼ í•´ì£¼ì§€ ì•Šìœ¼ë©´ ê²°ê³¼ê°’ì´ ì œëŒ€ë¡œ ë‚˜ì˜¤ì§€ ì•ŠëŠ”ë‹¤.
 iter = 0; xr = xl; ea = 100;C=0; D=0;
 
 while(1)
@@ -48,14 +48,14 @@ if func(xl)*func(xu)>0
     disp('Wrong interval or interval length too long to find root')
 else
     xrold = xr;
-    xr = (xl+xu)/2; %intervalÀÇ °¡¿îµ¥ °ªÀ» Àâ´Â´Ù.
-    iter = iter +1; %iter count¸¦ 1Áõ°¡ ½ÃÅ²´Ù.
+    xr = (xl+xu)/2; %intervalì˜ ê°€ìš´ë° ê°’ì„ ì¡ëŠ”ë‹¤.
+    iter = iter +1; %iter countë¥¼ 1ì¦ê°€ ì‹œí‚¨ë‹¤.
     if xr ~=0, ea = abs((xr-xrold)/xr) * 100;
        %er = abs(sqrt(0.1911)-xr)/sqrt(0.1911) * 100;
        D(iter) = ea/100;
        C(iter) = iter;
     end
-    %variable arguments for input = varagin ; ÀÔ·ÂÇÑ ÀÎÀÚÀÇ °¹¼ö°¡ ¿©·¯°³ÀÏ ¶§ ¾²ÀÓ.
+    %variable arguments for input = varagin ; ì…ë ¥í•œ ì¸ìì˜ ê°¯ìˆ˜ê°€ ì—¬ëŸ¬ê°œì¼ ë•Œ ì“°ì„.
     test = func(xr,varargin{:})*func(xl, varargin{:});
     if test < 0
         xu = xr;
