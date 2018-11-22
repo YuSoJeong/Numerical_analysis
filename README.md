@@ -15,6 +15,8 @@
     cos_Taylor ( x, a, n)
 
  # 결과
+ ![image](https://user-images.githubusercontent.com/44575829/48900668-62821f00-ee96-11e8-9d21-6e7b56421476.png)
+ 
  
     0에서 pi/2 까지의 Taylor series 로 근사한 파형이 나타난다.
  
@@ -80,7 +82,9 @@
  # 결과
  
  ![image](https://user-images.githubusercontent.com/44575829/48900445-bd674680-ee95-11e8-95cd-f17170e19d58.png)
-    Bisection과 FalsePosition방법을 통해 각각의 root 의 값을 얻을 수 있고, 
+    Bisection과 FalsePosition
+    
+    방법을 통해 각각의 root 의 값을 얻을 수 있고, 
     반복 횟수에 따른 근사 상대오차의 그래프를 확인할 수 있다. 
     
     
