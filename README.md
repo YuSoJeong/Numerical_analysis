@@ -1,5 +1,6 @@
 # Numerical_analysis
-수치해석을 위한 매트랩에서의 유용한 코드
+
+ MATLAB 을 활용한 다양한 수치해법을 구현한 코드
 
 # 1) cos_Taylor.m 
 
