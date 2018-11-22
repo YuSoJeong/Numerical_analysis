@@ -54,6 +54,8 @@
 
  # 결과
  
+ ![image](https://user-images.githubusercontent.com/44575829/48900402-9e68b480-ee95-11e8-93b4-b61417aff4ff.png)
+    
     Bisection과 FalsePosition방법을 통해 각각의 root 의 값을 얻을 수 있고, 반복 횟수에 따른 참 상대오차의 
     그래프를 확인할 수 있다. Bisection 는 xl, xu 의 반을 근사값으로 설정하므로 오히려 실제 근과 더 멀어지는 현상이
     나타날 수 있기에 반복횟수에 따른 참오차의 그래프가 들쑥날쑥하다. 
@@ -77,6 +79,7 @@
 
  # 결과
  
+ ![image](https://user-images.githubusercontent.com/44575829/48900445-bd674680-ee95-11e8-95cd-f17170e19d58.png)
     Bisection과 FalsePosition방법을 통해 각각의 root 의 값을 얻을 수 있고, 
     반복 횟수에 따른 근사 상대오차의 그래프를 확인할 수 있다. 
     
